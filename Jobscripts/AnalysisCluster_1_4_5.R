@@ -63,8 +63,7 @@ source("./Functions/Functions_AnalysisCluster_1_4_5.R")
 #### 6
 # Start the cluster:
 
-# NOTE: This syntax requires the use of the RMPISNOW script, see the README file
-# contained in the root folder "Additional_file_2_HornungWright".
+# NOTE: This syntax requires the use of the RMPISNOW script from the snow R package.
 
 #library(snow)
 

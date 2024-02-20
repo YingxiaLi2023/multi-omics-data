@@ -59,16 +59,16 @@ cindex_lasso <- lapply(rapply(sapply(Results, function(x) x$cindex_lasso), enquo
 
 
 
-ibrier_bf <-unlist(ibrier_bf)
-cindex_bf <-unlist(cindex_bf)
-ibrier_rf <-unlist(ibrier_rf)
-cindex_rf <-unlist(cindex_rf)
-ibrier_prioritylasso <-unlist(ibrier_prioritylasso)
-cindex_prioritylasso <-unlist(cindex_prioritylasso)
-ibrier_ipflasso <-unlist(ibrier_ipflasso)
-cindex_ipflasso <-unlist(cindex_ipflasso)
-ibrier_lasso <-unlist(ibrier_lasso)
-cindex_lasso <-unlist(cindex_lasso)
+ibrier_bf <- unlist(ibrier_bf)
+cindex_bf <- unlist(cindex_bf)
+ibrier_rf <- unlist(ibrier_rf)
+cindex_rf <- unlist(cindex_rf)
+ibrier_prioritylasso <- unlist(ibrier_prioritylasso)
+cindex_prioritylasso <- unlist(cindex_prioritylasso)
+ibrier_ipflasso <- unlist(ibrier_ipflasso)
+cindex_ipflasso <- unlist(cindex_ipflasso)
+ibrier_lasso <- unlist(ibrier_lasso)
+cindex_lasso <- unlist(cindex_lasso)
 
 
 results <- cbind(scenariogrid1,ibrier_rf,cindex_rf,ibrier_bf,cindex_bf,
@@ -91,7 +91,6 @@ results[is.na(results$cindex_bf),which(colnames(results) == 'cindex_bf')] <- 0.5
 results[is.na(results$ibrier_rf),which(colnames(results) == 'ibrier_rf')] <- 0.25
 results[is.na(results$cindex_rf),which(colnames(results) == 'cindex_rf')] <- 0.5
 table(is.na(results))
-#save(results, file="./results.Rda")
 
 
 # Calculate mean values per data set:
@@ -141,7 +140,6 @@ scenariogrid2 <- scenariogrid2[indres1,] # finished iteration
 #note: we need to rerun the scenmiss on the LRZ
 
 (scenmiss2 <- scenariogrid[setdiff(allinds, indres1),]) # get the remaining cases
-#save(scenmiss, file="./scenmiss3.Rda")
 
 # part3. read iteration results
 
@@ -172,16 +170,16 @@ cindex_lasso <- lapply(rapply(sapply(Results, function(x) x$cindex_lasso), enquo
 
 
 
-ibrier_bf <-unlist(ibrier_bf)
-cindex_bf <-unlist(cindex_bf)
-ibrier_rf <-unlist(ibrier_rf)
-cindex_rf <-unlist(cindex_rf)
-ibrier_prioritylasso <-unlist(ibrier_prioritylasso)
-cindex_prioritylasso <-unlist(cindex_prioritylasso)
-ibrier_ipflasso <-unlist(ibrier_ipflasso)
-cindex_ipflasso <-unlist(cindex_ipflasso)
-ibrier_lasso <-unlist(ibrier_lasso)
-cindex_lasso <-unlist(cindex_lasso)
+ibrier_bf <- unlist(ibrier_bf)
+cindex_bf <- unlist(cindex_bf)
+ibrier_rf <- unlist(ibrier_rf)
+cindex_rf <- unlist(cindex_rf)
+ibrier_prioritylasso <- unlist(ibrier_prioritylasso)
+cindex_prioritylasso <- unlist(cindex_prioritylasso)
+ibrier_ipflasso <- unlist(ibrier_ipflasso)
+cindex_ipflasso <- unlist(cindex_ipflasso)
+ibrier_lasso <- unlist(ibrier_lasso)
+cindex_lasso <- unlist(cindex_lasso)
 
 
 results <- cbind(scenariogrid2,ibrier_rf,cindex_rf,ibrier_bf,cindex_bf,
@@ -205,7 +203,6 @@ results[is.na(results$ibrier_rf),which(colnames(results) == 'ibrier_rf')] <- 0.2
 results[is.na(results$cindex_rf),which(colnames(results) == 'cindex_rf')] <- 0.5
 table(is.na(results))
 
-#save(results, file="./results.Rda")
 
 
 # Calculate mean values per data set:
@@ -282,16 +279,16 @@ cindex_ipflasso <- lapply(rapply(sapply(Results, function(x) x$cindex_ipflasso),
 ibrier_lasso <- lapply(rapply(sapply(Results, function(x) x$ibrier_lasso), enquote, how="unlist"), eval)
 cindex_lasso <- lapply(rapply(sapply(Results, function(x) x$cindex_lasso), enquote, how="unlist"), eval)
 
-ibrier_bf <-unlist(ibrier_bf)
-cindex_bf <-unlist(cindex_bf)
-ibrier_rf <-unlist(ibrier_rf)
-cindex_rf <-unlist(cindex_rf)
-ibrier_prioritylasso <-unlist(ibrier_prioritylasso)
-cindex_prioritylasso <-unlist(cindex_prioritylasso)
-ibrier_ipflasso <-unlist(ibrier_ipflasso)
-cindex_ipflasso <-unlist(cindex_ipflasso)
-ibrier_lasso <-unlist(ibrier_lasso)
-cindex_lasso <-unlist(cindex_lasso)
+ibrier_bf <- unlist(ibrier_bf)
+cindex_bf <- unlist(cindex_bf)
+ibrier_rf <- unlist(ibrier_rf)
+cindex_rf <- unlist(cindex_rf)
+ibrier_prioritylasso <- unlist(ibrier_prioritylasso)
+cindex_prioritylasso <- unlist(cindex_prioritylasso)
+ibrier_ipflasso <- unlist(ibrier_ipflasso)
+cindex_ipflasso <- unlist(cindex_ipflasso)
+ibrier_lasso <- unlist(ibrier_lasso)
+cindex_lasso <- unlist(cindex_lasso)
 
 
 results <- cbind(scenariogrid3,ibrier_rf,cindex_rf,ibrier_bf,cindex_bf,
@@ -350,6 +347,3 @@ save(resultsum, file = "./resultsum.RData")
 
 resultsumsum <- rbind(resultsumsum145,resultsumsum2,resultsumsum3)
 save(resultsumsum, file = "./resultsumsum.RData")
-
-
-

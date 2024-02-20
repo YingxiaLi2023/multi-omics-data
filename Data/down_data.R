@@ -11,10 +11,6 @@
 
 
 # OpenML dataset ids to querry
-#install.packages("OpenML")
-#install.packages("mlr")
-#install.packages("ParamHelpers")
-#install.packages("farff")
 library(OpenML)
 library(mlr)
 library(ParamHelpers)

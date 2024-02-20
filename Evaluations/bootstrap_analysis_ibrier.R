@@ -36,7 +36,7 @@ resultswide_bf <- reshape(resultsibrier_bf , idvar = c("dat"), timevar = "comb",
 colnames(resultswide_bf) <- gsub("ibrier_bf.", "", colnames(resultswide_bf))
 
 set.seed(1234)
-timestart <-Sys.time()
+timestart <- Sys.time()
 Ranks <- list()# the results will be stored
 i=1
 for (i in 1:5000) {
@@ -58,17 +58,14 @@ for (i in 1:5000) {
   
 }
 
-timeend <-Sys.time()
-runningtime <-timeend-timestart
+timeend <- Sys.time()
+runningtime <- timeend-timestart
 allranks = data.frame(do.call(rbind, Ranks))
 
 colnames(allranks) <- means[,1]
 temp <- apply(allranks, 2, function(x) quantile(x, c(0.025, 0.975))) 
 temp <- rbind(apply(allranks, 2, mean), temp)
 CI_bf <- temp[,match(manes,colnames(temp))]
-#save(CI_bf, file = "C:/Users/yingxiali/Desktop/paper3/3_rcode/CI_ibrier_bf.RData")
-#write.xlsx2(CI_bf, file = "C:/Users/yingxiali/Desktop/paper3/3_rcode/CI_ibrier_bf.xlsx",
-#col.names = TRUE, row.names = TRUE, append = FALSE)
 
 
 
@@ -79,7 +76,7 @@ resultswide_rf <- reshape(resultsibrier_rf , idvar = c("dat"), timevar = "comb",
 colnames(resultswide_rf) <- gsub("ibrier_rf.", "", colnames(resultswide_rf))
 
 set.seed(1234)
-timestart <-Sys.time()
+timestart <- Sys.time()
 Ranks <- list()# the results will be stored
 i=1
 for (i in 1:5000) {
@@ -101,17 +98,15 @@ for (i in 1:5000) {
   
 }
 
-timeend <-Sys.time()
-runningtime <-timeend-timestart
+timeend <- Sys.time()
+runningtime <- timeend-timestart
 allranks = data.frame(do.call(rbind, Ranks))
 
 colnames(allranks) <- means[,1]
 temp <- apply(allranks, 2, function(x) quantile(x, c(0.025, 0.975))) 
 temp <- rbind(apply(allranks, 2, mean), temp)
 CI_rf <- temp[,match(manes,colnames(temp))]
-#save(CI_rf, file = "C:/Users/yingxiali/Desktop/paper3/3_rcode/CI_ibrier_rf.RData")
-#write.xlsx2(CI_rf, file = "C:/Users/yingxiali/Desktop/paper3/3_rcode/CI_ibrier_rf.xlsx",
-#col.names = TRUE, row.names = TRUE, append = FALSE)
+
 
 ##### lasso ####
 resultsibrier_lasso <- cbind(resultsumsum[,c(1,2)],resultsumsum$ibrier_lasso)
@@ -120,7 +115,7 @@ resultswide_lasso <- reshape(resultsibrier_lasso , idvar = c("dat"), timevar = "
 colnames(resultswide_lasso) <- gsub("ibrier_lasso.", "", colnames(resultswide_lasso))
 
 set.seed(1234)
-timestart <-Sys.time()
+timestart <- Sys.time()
 Ranks <- list()# the results will be stored
 i=1
 for (i in 1:5000) {
@@ -142,16 +137,13 @@ for (i in 1:5000) {
   
 }
 
-timeend <-Sys.time()
-runningtime <-timeend-timestart
+timeend <- Sys.time()
+runningtime <- timeend-timestart
 allranks = data.frame(do.call(rbind, Ranks))
 colnames(allranks) <- means[,1]
 temp <- apply(allranks, 2, function(x) quantile(x, c(0.025, 0.975))) 
 temp <- rbind(apply(allranks, 2, mean), temp)
 CI_lasso <- temp[,match(manes,colnames(temp))]
-#save(CI_lasso, file = "C:/Users/yingxiali/Desktop/paper3/3_rcode/CI_ibrier_lasso.RData")
-#write.xlsx2(CI_lasso, file = "C:/Users/yingxiali/Desktop/paper3/3_rcode/CI_ibrier_lasso.xlsx",
-#col.names = TRUE, row.names = TRUE, append = FALSE)
 
 ##### ipflasso ####
 
@@ -161,7 +153,7 @@ resultswide_ipflasso <- reshape(resultsibrier_ipflasso , idvar = c("dat"), timev
 colnames(resultswide_ipflasso) <- gsub("ibrier_ipflasso.", "", colnames(resultswide_ipflasso))
 
 set.seed(1234)
-timestart <-Sys.time()
+timestart <- Sys.time()
 Ranks <- list()# the results will be stored
 i=1
 for (i in 1:5000) {
@@ -183,16 +175,14 @@ for (i in 1:5000) {
   
 }
 
-timeend <-Sys.time()
-runningtime <-timeend-timestart
+timeend <- Sys.time()
+runningtime <- timeend-timestart
 allranks = data.frame(do.call(rbind, Ranks))
 colnames(allranks) <- means[,1]
 temp <- apply(allranks, 2, function(x) quantile(x, c(0.025, 0.975))) 
 temp <- rbind(apply(allranks, 2, mean), temp)
 CI_ipflasso <- temp[,match(manes,colnames(temp))]
-#save(CI_ipflasso, file = "C:/Users/yingxiali/Desktop/paper3/3_rcode/CI_ibrier_ipflasso.RData")
-#write.xlsx2(CI_ipflasso, file = "C:/Users/yingxiali/Desktop/paper3/3_rcode/CI_ibrier_ipflasso.xlsx",
-#col.names = TRUE, row.names = TRUE, append = FALSE)
+
 
 ##### prioritylasso ####
 resultsibrier_prioritylasso <- cbind(resultsumsum[,c(1,2)],resultsumsum$ibrier_prioritylasso)
@@ -201,7 +191,7 @@ resultswide_prioritylasso <- reshape(resultsibrier_prioritylasso , idvar = c("da
 colnames(resultswide_prioritylasso) <- gsub("ibrier_prioritylasso.", "", colnames(resultswide_prioritylasso))
 
 set.seed(1234)
-timestart <-Sys.time()
+timestart <- Sys.time()
 Ranks <- list()# the results will be stored
 i=1
 for (i in 1:5000) {
@@ -223,8 +213,8 @@ for (i in 1:5000) {
   
 }
 
-timeend <-Sys.time()
-runningtime <-timeend-timestart
+timeend <- Sys.time()
+runningtime <- timeend-timestart
 allranks = data.frame(do.call(rbind, Ranks))
 
 colnames(allranks) <- means[,1]
@@ -244,4 +234,3 @@ rownames(CI_ibrier) <- c("bf_mean","bf_lower", "bf_upper",
 
 write.xlsx2(CI_ibrier, file = "./CI_ibrier.xlsx",
             col.names = TRUE, row.names = TRUE, append = FALSE)
-
