@@ -6,6 +6,7 @@
 # on your computer):
 
 ## setwd("pathtomulti-omics-data/multi-omics-data/Results")
+setwd("Z:/Projects/SideProjects/Yingxia/Multi-Omics-Importance/Neu_wichtig/Final_Code_on_GitHub/multi-omics-data/Results")
 
 ########################################################
 
@@ -106,7 +107,7 @@ cindex_bf <- ggplot(data=resultscindex_bf, aes(x=comb, y=cindex_bf)) +
   theme(axis.title.x=element_blank(),
         axis.text.x=element_blank(),
        axis.ticks.x=element_blank())+
-  labs(x = " ", y = "cross-validated cindex ")
+  labs(x = " ", y = "Cross-validated cindex ")
 
 # rf
 resultscindex_rf <- cbind(resultsumsum[,c(1,2)],resultsumsum$cindex_rf)
@@ -120,7 +121,7 @@ cindex_rf <- ggplot(data=resultscindex_rf, aes(x=comb, y=cindex_rf)) +
   theme(axis.title.x=element_blank(),
         axis.text.x=element_blank(),
         axis.ticks.x=element_blank())+
-  labs(x = " ", y = "cross-validated cindex ")
+  labs(x = " ", y = "Cross-validated cindex ")
 
 # lasso
 resultscindex_lasso <- cbind(resultsumsum[,c(1,2)],resultsumsum$cindex_lasso)
@@ -134,7 +135,7 @@ cindex_lasso <- ggplot(data=resultscindex_lasso, aes(x=comb, y=cindex_lasso)) +
   theme(axis.title.x=element_blank(),
         axis.text.x=element_blank(),
         axis.ticks.x=element_blank())+
-  labs(x = " ", y = "cross-validated cindex ")
+  labs(x = " ", y = "Cross-validated cindex ")
 
 # ipflasso
 resultscindex_ipflasso <- cbind(resultsumsum[,c(1,2)],resultsumsum$cindex_ipflasso)
@@ -148,7 +149,7 @@ cindex_ipflasso <- ggplot(data=resultscindex_ipflasso, aes(x=comb, y=cindex_ipfl
   theme(axis.title.x=element_blank(),
         axis.text.x=element_blank(),
         axis.ticks.x=element_blank())+
-  labs(x = " ", y = "cross-validated cindex ")
+  labs(x = " ", y = "Cross-validated cindex ")
 
 # prioritylasso
 resultscindex_prioritylasso <- cbind(resultsumsum[,c(1,2)],resultsumsum$cindex_prioritylasso)
@@ -162,7 +163,7 @@ cindex_prioritylasso <- ggplot(data=resultscindex_prioritylasso, aes(x=comb, y=c
   theme(axis.title.x=element_blank(),
         axis.text.x=element_blank(),
         axis.ticks.x=element_blank())+
-  labs(x = " ", y = "cross-validated cindex ")
+  labs(x = " ", y = "Cross-validated cindex ")
 
 ##heatmap
 p2 <- ggplot(d, aes(x=a, y=b, fill=c)) + 
@@ -193,7 +194,7 @@ ibrier_bf <- ggplot(data=resultsibrier_bf, aes(x=comb, y=ibrier_bf)) +
   theme(axis.title.x=element_blank(),
         axis.text.x=element_blank(),
         axis.ticks.x=element_blank())+
-  labs(x = " ", y = "cross-validated ibrier ")
+  labs(x = " ", y = "Cross-validated ibrier ")
 
 # rf
 resultsibrier_rf <- cbind(resultsumsum[,c(1,2)],resultsumsum$ibrier_rf)
@@ -207,7 +208,7 @@ ibrier_rf <- ggplot(data=resultsibrier_rf, aes(x=comb, y=ibrier_rf)) +
   theme(axis.title.x=element_blank(),
         axis.text.x=element_blank(),
         axis.ticks.x=element_blank())+
-  labs(x = " ", y = "cross-validated ibrier ")
+  labs(x = " ", y = "Cross-validated ibrier ")
 
 # lasso
 resultsibrier_lasso <- cbind(resultsumsum[,c(1,2)],resultsumsum$ibrier_lasso)
@@ -221,7 +222,7 @@ ibrier_lasso <- ggplot(data=resultsibrier_lasso, aes(x=comb, y=ibrier_lasso)) +
   theme(axis.title.x=element_blank(),
         axis.text.x=element_blank(),
         axis.ticks.x=element_blank())+
-  labs(x = " ", y = "cross-validated ibrier ")
+  labs(x = " ", y = "Cross-validated ibrier ")
 
 # ipflasso
 resultsibrier_ipflasso <- cbind(resultsumsum[,c(1,2)],resultsumsum$ibrier_ipflasso)
@@ -235,7 +236,7 @@ ibrier_ipflasso <- ggplot(data=resultsibrier_ipflasso, aes(x=comb, y=ibrier_ipfl
   theme(axis.title.x=element_blank(),
         axis.text.x=element_blank(),
         axis.ticks.x=element_blank())+
-  labs(x = " ", y = "cross-validated ibrier ")
+  labs(x = " ", y = "Cross-validated ibrier ")
 
 # prioritylasso
 resultsibrier_prioritylasso <- cbind(resultsumsum[,c(1,2)],resultsumsum$ibrier_prioritylasso)
@@ -249,7 +250,7 @@ ibrier_prioritylasso <- ggplot(data=resultsibrier_prioritylasso, aes(x=comb, y=i
   theme(axis.title.x=element_blank(),
         axis.text.x=element_blank(),
         axis.ticks.x=element_blank())+
-  labs(x = " ", y = "cross-validated ibrier ")
+  labs(x = " ", y = "Cross-validated ibrier ")
 
 #### combine figures ####
 p5_cindex_value <- ggarrange(cindex_rf,  NULL, cindex_bf,  NULL, cindex_lasso,NULL, 
