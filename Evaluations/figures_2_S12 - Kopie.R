@@ -9,6 +9,8 @@
 
 ########################################################
 
+setwd("Z:/Projects/SideProjects/Yingxia/Multi-Omics-Importance/BMC_Medical_Informatics_and_Decision_Making/First_revision/Code/multi-omics-data/Results")
+
 ##### load data ####
 library("grid")
 library("gridExtra")
@@ -241,6 +243,7 @@ p1 <- ggplot(data=top30, aes(x=combin, y=rank.y)) +
   theme_bw() + 
   geom_boxplot() +
   ylim(0,155)+
+  geom_point(data=means[1:30,], aes(x=combin, y=rank), shape=23, fill="blue", size=2) +
   scale_x_discrete(limits=means[1:30,]$combin) +
   theme(axis.title.x=element_blank(),
         axis.text.x=element_blank(),
@@ -287,7 +290,7 @@ p3 <- ggplot(top30h2, aes(x=combin, y=w, fill=classifiers)) +
   labs(x = " ", y = "") +
   coord_fixed() + 
   scale_x_discrete(limits=top30h2$combin)+
-  scale_y_discrete(labels=c("predictors")) +
+  scale_y_discrete(labels=c("method")) +
   theme(panel.background = element_blank(), # Make panel background transparent
         axis.text.x = element_blank(),
         #axis.text.y = element_blank(),
@@ -309,7 +312,7 @@ p3 <- p3 +
 ## draw figure
 top30_pall_cindex <- ggarrange(p1, NULL, p2, NULL, p3, nrow = 5, align="v", heights = c(1, 0, 1,0, 1)) #c(1, -0.23, 1,-0.70, 1) )
 top30_pall_cindex
-ggsave(file="./figures/figureS6_raw.png", 
+ggsave(file="./figures/figureS12_raw.png", 
        top30_pall_cindex, width=8, height=5.5)
 
 
@@ -452,6 +455,7 @@ p1 <- ggplot(data=top30, aes(x=combin, y=rank.y)) +
   theme_bw() + 
   geom_boxplot() +
   ylim(0,155)+
+  geom_point(data=means[1:30,], aes(x=combin, y=rank), shape=23, fill="blue", size=2) +
   scale_x_discrete(limits=means[1:30,]$combin) +
   theme(axis.title.x=element_blank(),
         axis.text.x=element_blank(),
@@ -499,14 +503,14 @@ top30h2 <- top30h2[order(top30h2$sort),]
 top30h2$classifiers <- factor(top30h2$classifiers, levels=c("rf", "bf", "lasso", "ipflasso", "prioritylasso"))
 
 p3 <- ggplot(top30h2, aes(x=combin, y=w, fill=classifiers)) + 
-  geom_tile(color = "white",lwd = 1.5,linetype = 1) +
+  geom_tile(color = "white",lwd = 1.5,linetype = 1, show.legend = TRUE) +
   scale_fill_manual(values = c("rf"="blue","bf"="hotpink","lasso"="red", "ipflasso"="orange",
                                "prioritylasso"="green"),
                     labels = c("rsf","bf","lasso","ipflasso","prioritylasso"), drop=FALSE)+
   labs(x = " ", y = "") +
   coord_fixed() + 
   scale_x_discrete(limits=top30h2$combin)+
-  scale_y_discrete(labels=c("predictors")) +
+  scale_y_discrete(labels=c("method")) +
   theme(panel.background = element_blank(),
         axis.text.x = element_blank(),
         axis.text.y = element_text(color="black", size=12),
