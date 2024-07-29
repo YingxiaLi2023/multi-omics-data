@@ -1,6 +1,12 @@
-# Code to the Benchmark Study Based on Multi-Omics Data by Li et al.
+###############################################################3##########################
 
-This is the electronic appendix (R code) to the article "Does combining numerous data types in multi-omics data improve or hinder performance in survival prediction? Insights from a large-scale benchmark study" by Yingxia Li, Tobias Herold, Ulrich Mansmann, and Roman Hornung.
+This is the electronic appendix (R code) to the article "Does combining numerous data types in multi-omics data improve or hinder performance in survival prediction? Insights from a large-scale benchmark study" by Yingxia Li1, Tobias Herold2, Ulrich Mansmann1, Roman Hornung1,3
+
+1 Institute for Medical Information Processing, Biometry and Epidemiology, University of Munich, Marchioninistr. 15, 81377 Munich, Germany;
+
+2 Laboratory for Leukemia Diagnostics, Department of Medicine III, LMU University Hospital, LMU Munich, Munich, Germany;
+
+3 Munich Center for Machine Learning (MCML), Munich, Germany;
 
 ## Repository Structure
 
