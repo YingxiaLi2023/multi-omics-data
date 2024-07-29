@@ -1,4 +1,4 @@
-###############################################################3##########################
+######################################################################################
 
 This is the electronic appendix (R code) to the article "Does combining numerous data types in multi-omics data improve or hinder performance in survival prediction? Insights from a large-scale benchmark study" by Yingxia Li1, Tobias Herold2, Ulrich Mansmann1, Roman Hornung1,3
 
