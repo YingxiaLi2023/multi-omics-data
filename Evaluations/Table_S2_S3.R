@@ -6,9 +6,9 @@
 # and replace 'pathtomulti-omics-data' by the path to 'multi-omics-data'
 # on your computer):
 
-## setwd("pathtomulti-omics-data/multi-omics-data/Results")
+ setwd("pathtomulti-omics-data/multi-omics-data/Results")
 #setwd("Z:/Projects/SideProjects/Yingxia/Multi-Omics-Importance/Neu_wichtig/Final_Code_on_GitHub/multi-omics-data/Results")
-setwd("D:/IBE/paper3/LRZ_Jul_Results")
+#setwd("D:/IBE/paper3/LRZ_Jul_Results")
 load("./resultsumsum.RData")
 ########################################################
 
@@ -111,7 +111,7 @@ p2 <- ggplot(d, aes(x = a, y = b, fill = c)) +
 p2
 
 
-ggsave(file="C:/Users/cellar/Desktop/heatmap2.png", 
+ggsave(file="./heatmap2.png", 
        p2, width=24, height=4)
 
 
@@ -166,7 +166,7 @@ doc <- read_docx() %>%
   body_end_section_landscape()
 
 
-print(doc, target = "C:/Users/cellar/Desktop/table_cindex.docx")
+print(doc, target = "./table_cindex.docx")
 
 ######step3: the table of cindex #####
 ibrier <- resultsumsum[,c(1,2,3,5,7,9,11)]
@@ -219,7 +219,7 @@ doc <- read_docx() %>%
   body_end_section_landscape()
 
 
-print(doc, target = "C:/Users/cellar/Desktop/table_ibrier.docx")
+print(doc, target = "./table_ibrier.docx")
 
 
 
