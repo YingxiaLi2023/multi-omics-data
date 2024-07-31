@@ -16,13 +16,12 @@ Rrogram and Platfprm
                  Windows10 64-bit (for the evaluation of the results)
 -  The following output from sessionInfo() describes which R packages and versions were used:
   
- > sessionInfo()
+  sessionInfo()
 R version 4.1.2 (2021-11-01)
 Platform: x86_64-pc-linux-gnu (64-bit)
 Running under: SUSE Linux Enterprise Server 15 SP1
 
 Matrix products: default
-BLAS/LAPACK: /dss/dsshome1/lrz/sys/spack/release/22.2.1/opt/haswell/intel-mkl/2020.4.304-gcc-                                                                                                3e7v2iy/compilers_and_libraries_2020.4.304/linux/mkl/lib/intel64_lin/libmkl_gf_lp64.so
 
 locale:
  [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C
