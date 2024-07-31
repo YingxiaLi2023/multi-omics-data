@@ -123,3 +123,42 @@ Repository Structure
 -   Purpose:  as a sensitivity analysis, just change the selected featrues from 2500 into 1000.
 
 Further details on the benchmark study are available in the paper.
+
+7. Full reproduction of the results:
+#################################
+
+- All R code needed to fully reproduce the analyses is available in 
+  this electronic appendix.
+
+- An MPI environment is required.
+
+- The R scripts named "AnalysisCluster.R" in the Jobscripts subfolders require the 
+  RMPISNOW shell script from the R package "snow".
+  Therefore, before executing these scripts you need to install the RMPISNOW shell script 
+  from the installed 'snow' R package or 'inst' directory of the package sources
+  of the 'snow' R package in an appropriate location, preferably
+  on your path. 
+  See http://homepage.divms.uiowa.edu/~luke/R/cluster/cluster.html for more details.
+  Subsequently, you need to create sh files, each for a different of the
+  above R scripts. The following is the content of an example sh file "simulation_clustdata.sh":
+
+  #!/bin/bash
+  #SBATCH -o /myoutfiledirectory/myjob.%j.%N.out
+  #SBATCH -D /myhomedirectory
+  #SBATCH -J LargeStudy
+  #SBATCH --get-user-env 
+  #SBATCH --clusters=myclustername
+  #SBATCH --partition=mypartitionname
+  #SBATCH --qos=mypartitionname
+  #SBATCH --nodes=??
+  #SBATCH --ntasks-per-node=??
+  #SBATCH --mail-type=end
+  #SBATCH --mail-user=my@mail.de
+  #SBATCH --time=??:??:??
+
+  mpirun RMPISNOW < ./multi-omics-data/Jobscripts/AnalysisCluster.R
+
+  The above sh file of course has to be adjusted to be useable (e.g., the "?"s have
+  to replaced by actual numbers, the directories have to be adjusted and
+  you need to specify your e-mail address; an e-mail will be sent to this address
+  once the job is finished).
