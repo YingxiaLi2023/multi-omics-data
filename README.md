@@ -125,6 +125,7 @@ Repository Structure
 Further details on the benchmark study are available in the paper.
 
 7. Full reproduction of the results:
+   
 #################################
 
 - All R code needed to fully reproduce the analyses is available in 
