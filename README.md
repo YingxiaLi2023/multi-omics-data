@@ -24,7 +24,6 @@ Running under: SUSE Linux Enterprise Server 15 SP1
 Matrix products: default
 
 locale:
-
  [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C
  [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8
  [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8
@@ -47,7 +46,7 @@ other attached packages:
 [22] ggplot2_3.5.1       farff_1.1.1         dplyr_1.1.4
 [25] bootstrap_2019.6    blockForest_0.2.4
 
-loaded via a namespace (and not attached):
+loaded via a namespace (and not attached):                                                                 
  [1] httr_1.4.7          jsonlite_1.8.8      splines_4.1.2
  [4] foreach_1.5.2       rmeta_3.0           globals_0.14.0
  [7] survivalROC_1.0.3   timereg_2.0.2       numDeriv_2016.8-1.1
