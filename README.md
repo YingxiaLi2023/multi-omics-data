@@ -24,6 +24,7 @@ Running under: SUSE Linux Enterprise Server 15 SP1
 Matrix products: default
 
 locale:
+
  [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C
  [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8
  [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8
@@ -31,7 +32,7 @@ locale:
  [9] LC_ADDRESS=C               LC_TELEPHONE=C
 [11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C
 
-attached base packages:
+attached base packages:                                                                                                                                
 [1] grid      stats     graphics  grDevices utils     datasets  methods
 [8] base
 
