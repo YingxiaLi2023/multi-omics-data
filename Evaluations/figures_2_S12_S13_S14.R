@@ -9,9 +9,7 @@
 
 ########################################################
 
-setwd("Z:/Projects/SideProjects/Yingxia/Multi-Omics-Importance/BMC_Medical_Informatics_and_Decision_Making/First_revision/Code/multi-omics-data/Results")
-
-##### load data ####
+##### load data
 library("grid")
 library("gridExtra")
 library("ggplot2")

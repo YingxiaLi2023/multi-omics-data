@@ -1,22 +1,25 @@
 ######################################################################################
 
-This is the electronic appendix (R code) to the article "Does combining numerous data types in multi-omics data improve or hinder performance in survival prediction? Insights from a large-scale benchmark study" (2024) by Yingxia Li1, Tobias Herold2, Ulrich Mansmann1, Roman Hornung1,3
+# Code to the Benchmark Study Based on Multi-Omics Data by Li et al. (2024)
 
-1 Institute for Medical Information Processing, Biometry and Epidemiology, University of Munich, Marchioninistr. 15, 81377 Munich, Germany;
+This is the electronic appendix (R code) to the article "Does combining numerous data types in multi-omics data improve or hinder performance in survival prediction? Insights from a large-scale benchmark study" (2024) by Yingxia Li<sup>1</sup>, Tobias Herold<sup>2</sup>, Ulrich Mansmann<sup>1</sup>, Roman Hornung<sup>1,3</sup>.
 
-2 Laboratory for Leukemia Diagnostics, Department of Medicine III, LMU University Hospital, LMU Munich, Munich, Germany;
-
-3 Munich Center for Machine Learning (MCML), Munich, Germany;
+1. Institute for Medical Information Processing, Biometry and Epidemiology, University of Munich, Marchioninistr. 15, 81377 Munich, Germany;
+2. Laboratory for Leukemia Diagnostics, Department of Medicine III, LMU University Hospital, LMU Munich, Munich, Germany;
+3. Munich Center for Machine Learning (MCML), Munich, Germany;
 
 ######################################################################################
 
-Rrogram and Platfprm
-- Program: R, version 4.1.2 (2021-11-01)
-- Used Platform: Linux (x86-64)  (for the conduction of the analyses)
-                 Windows10 64-bit (for the evaluation of the results)
--  The following output from sessionInfo() describes which R packages and versions were used:
+## Program and Platform
+
+- **Program**: R, version 4.1.2 (2021-11-01)
+- **Platform**: 
+  - Linux (x86-64): For conducting the analyses
+  - Windows10 64-bit: For evaluating the results
+- **Session Information**: The following output from `sessionInfo()` describes which R packages and versions were used:
   
-  sessionInfo()
+```R
+  > sessionInfo()
 R version 4.1.2 (2021-11-01)
 Platform: x86_64-pc-linux-gnu (64-bit)
 Running under: SUSE Linux Enterprise Server 15 SP1
@@ -67,82 +70,72 @@ loaded via a namespace (and not attached):
 [52] KernSmooth_2.23-20  shape_1.4.6         readr_2.1.5
 [55] stringi_1.7.6       parallel_4.1.2      Rcpp_1.0.8.3
 [58] vctrs_0.6.5         tidyselect_1.2.1
+```
 
 ######################################################################################
 
-Repository Structure
+## Repository Structure
 
-1. Data Subfolder
+### 1. Data Subfolder
 
-##########################
-- **Purpose:** Contains scripts for downloading the OpenML data needed for reproducing the analyses.
-- **Contents:**
-  - `down_data.R`: Downloads data from OpenML.
-  - `dataset_ids.RData`: Includes OpenML IDs for the datasets to be downloaded.
+- **Purpose**: Contains scripts for downloading the OpenML data needed for reproducing the analyses.
+- **Contents**:
+- `"down_data.R"`: Downloads data from OpenML.
+- `"dataset_ids.RData"`: Includes OpenML IDs for the datasets to be downloaded.
 
-2. JobScripts Subfolder
+### 2. JobScripts Subfolder
 
-##########################
-- **Purpose:** Contains scripts for reproducing the benchmark study.
-- **Contents:**
-  - `AnalysisCluster_1_4_5.R`: For single blocks, combinations of 4 blocks, and combinations of 5 blocks.
-  - `AnalysisCluster_2.R`: For combinations of 2 blocks.
-  - `AnalysisCluster_3.R`: For combinations of 3 blocks.
+- **Purpose**: Contains scripts for reproducing the benchmark study.
+- **Contents**:
+- `"AnalysisCluster_1_4_5.R"`: For single blocks, combinations of 4 blocks, and combinations of 5 blocks.
+- `"AnalysisCluster_2.R"`: For combinations of 2 blocks.
+- `"AnalysisCluster_3.R"`: For combinations of 3 blocks.
 
-3. Functions Subfolder
-   
-##########################
-- **Purpose:** Contains scripts with functions used in the benchmark study.
-- **Contents:**
-  - Scripts whose labels contain `Functions_AnalysisCluster`: Functions for applying the different prediction methods to the different combinations.
+### 3. Functions Subfolder
+ 
+- **Purpose**: Contains scripts with functions used in the benchmark study.
+- **Contents**:
+- Scripts whose labels contain `Functions_AnalysisCluster`: Functions for applying the different prediction methods to the different combinations.
 
-4. Evaluations Subfolder
-   
-##########################
-- **Purpose:** Contains scripts for evaluating results and reproducing figures and tables.
-- **Contents:**
-  - `Evaluation_AnalysisCluster_fivemethods.R`: Evaluates raw results.
-  - `bootstrap analysis_ibrier.R` and `bootstrap analysis_cindex.R`: Performs the bootstrap analysis.
-  - Scripts labeled `figures`: Reproduces figures shown in the paper and supplement, where `figures_2_S6.R` in addition produces the results of the analysis presented at the end of Section "Best-performing combinations of prediction methods and blocks per dataset".
-  - `test_for_figure_2.R` and `tests_for_table_3.R`: Performs the statistical tests for Figure 2 and Table 3.
+### 4. Evaluations Subfolder
+ 
+- **Purpose**: Contains scripts for evaluating results and reproducing figures and tables.
+- **Contents**:
+- `"Evaluation_AnalysisCluster_fivemethods.R"`: Evaluates raw results.
+- `"bootstrap analysis_ibrier.R"` and `"bootstrap analysis_cindex.R"`: Performs the bootstrap analysis.
+- Scripts labeled `"figures"`: Reproduces figures shown in the paper and supplement, including `"figures_2_S12_S13_S14.R"` which also produces the results of the analysis presented at the end of Section "Best-performing combinations of prediction methods and blocks per dataset".
+- `"test_for_figure_2.R"` and `"tests_for_table_3.R"`: Performs the statistical tests for Figure 2 and Table 3.
+- `"tables_S2_S3.R"`: Code for producing the information shown in Tables S2 and S3.
 
-5. Results Subfolder
-   
-##########################
-- **Purpose:** Contains results and figures from the benchmark study.
-- **Contents:**
-  - **rda_files Subfolder:**
-    - `scenariogrid1.Rda`, `scenariogrid2.Rda`, `scenariogrid3.Rda`: Generated by the R scripts in `JobScripts`.
-    - `resultsumsum.RData`, `resultsum.RData`, `CI_cindex.xlsx`, `CI_ibrier.xlsx`: Generated by R scripts in `Evaluations`.
-  - **Figures Subfolder:**
-    - Contains all figures from the paper and supplement. Most figures have two versions, one with the suffix "_raw" and one without. The versions with the suffix "_raw" were generated by the R code, and the versions without the suffix were subsequently edited for visual reasons.
+### 5. Results Subfolder
+ 
+- **Purpose**: Contains results and figures from the benchmark study.
+- **Contents**:
+- **rda_files Subfolder**:
+  - `"scenariogrid1.Rda"`, `"scenariogrid2.Rda"`, `"scenariogrid3.Rda"`: Generated by the R scripts in `JobScripts`.
+  - `"resultsumsum.RData"`, `"resultsum.RData"`, `"CI_cindex.xlsx"`, `"CI_ibrier.xlsx"`, `"table_S2_ibrier.docx"`, `"table_S2_cindex.docx"`: Generated by R scripts in `Evaluations`.
+  
+  > **The file `"resultsum.RData"` is of particular importance.** This file contains a table (R `data.frame`) `resultsum`, which contains the unaggregated results of the benchmark study. It has the following columns: `comb`, `dat`, `cvind`, `ibrier_bf`, `cindex_bf`, `ibrier_rf`, `cindex_rf`, `ibrier_lasso`, `cindex_lasso`, `ibrier_ipflasso`, `cindex_ipflasso`, `ibrier_prioritylasso`, `cindex_prioritylasso`. Here `comb` provides the block combinations, `dat` the dataset, and `cvind` the indices of the five cross-validation repetitions. The columns `cindex_bf`, `ibrier_rf` etc. provide the cross-validated cindex and ibrier values.<br>
+  > This table may be used to extend the benchmark study to include further prediction methods.
+  
+- **Figures Subfolder**:
+  - Contains all figures from the paper and supplement. Most figures have two versions, one with the suffix "_raw" and one without. The versions with the suffix "_raw" were generated by the R code, and the versions without the suffix were subsequently edited for visual reasons.
 
- 6. Features_1000
-    
-##########################
--   Purpose:  as a sensitivity analysis, just change the selected featrues from 2500 into 1000.
-
-Further details on the benchmark study are available in the paper.
-
-7. Full reproduction of the results:
-   
-#################################
-
-- All R code needed to fully reproduce the analyses is available in 
-  this electronic appendix.
+### 6. Full reproduction of the results:
 
 - An MPI environment is required.
 
-- The R scripts named "AnalysisCluster.R" in the Jobscripts subfolders require the 
-  RMPISNOW shell script from the R package "snow".
+- The R scripts named `"AnalysisCluster.R"` in the Jobscripts subfolders require the 
+  RMPISNOW shell script from the R package `snow`.
   Therefore, before executing these scripts you need to install the RMPISNOW shell script 
-  from the installed 'snow' R package or 'inst' directory of the package sources
-  of the 'snow' R package in an appropriate location, preferably
+  from the installed `snow` R package or `inst` directory of the package sources
+  of the `snow` R package in an appropriate location, preferably
   on your path. 
   See http://homepage.divms.uiowa.edu/~luke/R/cluster/cluster.html for more details.
   Subsequently, you need to create sh files, each for a different of the
-  above R scripts. The following is the content of an example sh file "simulation_clustdata.sh":
+  above R scripts. The following is the content of an example sh file `"simulation_clustdata.sh"` for SLURM:
 
+```bash
   #!/bin/bash
   #SBATCH -o /myoutfiledirectory/myjob.%j.%N.out
   #SBATCH -D /myhomedirectory
@@ -158,8 +151,11 @@ Further details on the benchmark study are available in the paper.
   #SBATCH --time=??:??:??
 
   mpirun RMPISNOW < ./multi-omics-data/Jobscripts/AnalysisCluster.R
+```
 
   The above sh file of course has to be adjusted to be useable (e.g., the "?"s have
   to replaced by actual numbers, the directories have to be adjusted and
   you need to specify your e-mail address; an e-mail will be sent to this address
   once the job is finished).
+  
+  Note that it is possible to use other parallelization techniques (e.g., the `parallel` R package) than RMPISNOW to reproduce the results. This is because we use a different seed for each line in the object `scenariogrid` object created by the `"AnalysisCluster.R"` scripts. This makes the reproducibility independent of the specific type of parallelization. However, to use a different type of parallelization than RMPINOW, it is necessary to modify the `"AnalysisCluster.R"` scripts accordingly.
